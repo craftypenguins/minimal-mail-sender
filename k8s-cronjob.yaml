@@ -5,7 +5,7 @@ metadata:
   labels:
     app: mail-sender
 spec:
-  schedule: "*/10 * * * *"
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template: 
@@ -21,4 +21,4 @@ spec:
                 value: "nicole@craftypenguins.net"
               - name: SMTP_SENDER
                 value: "mail-sender@example.com"
-          restartPolicy: Never
+          restartPolicy: OnFailure
