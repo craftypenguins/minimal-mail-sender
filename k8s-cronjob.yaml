@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
           - name: mail-sender
-            image: craftypenguins/minimal-mail-sender:0.1
+            image: craftypenguins/minimal-mail-sender:0.1.1
             imagePullPolicy: IfNotPresent
             env:
               - name: SMTP_HOST
