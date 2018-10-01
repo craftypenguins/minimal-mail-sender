@@ -15,5 +15,6 @@ Optional:
     SMTP_PASSWORD
     SMTP_SUBJECT
     SMTP_BODY
+    SMTP_PORT
 
 See https://hub.docker.com/r/craftypenguins/minimal-mail-sender/
