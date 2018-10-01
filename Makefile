@@ -1,5 +1,10 @@
+version=$(shell cat version)
+
 build:
 	go build
 
 docker: build
-	docker build . -t minimal-mail-sender:latest
+	docker build . -t craftypenguins/minimal-mail-sender:$(version)
+
+push:
+	docker push craftypenguins/minimal-mail-sender:$(version)
