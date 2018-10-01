@@ -67,7 +67,7 @@ func main() {
          "",
          user,
          pwd,
-         host_url,
+         host,
       )
       err = c.Auth(auth)
       if err != nil { log.Fatal(err) }
@@ -89,4 +89,6 @@ func main() {
    if err != nil { log.Fatal(err) }
 
    c.Quit()
+
+   log.Println("Successfully sent mail to " + host_url)
 }

@@ -6,5 +6,5 @@ build:
 docker: build
 	docker build . -t craftypenguins/minimal-mail-sender:$(version)
 
-push:
+push: docker
 	docker push craftypenguins/minimal-mail-sender:$(version)
