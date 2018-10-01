@@ -1,0 +1,24 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: mail-sender-cronjob
+  labels:
+    app: mail-sender
+spec:
+  schedule: "*/10 * * * *"
+  jobTemplate:
+    spec:
+      template: 
+        spec:
+          containers:
+          - name: mail-sender
+            image: craftypenguins/minimal-mail-sender:0.1
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: SMTP_HOST
+                value: "mailrelay@example.com"
+              - name: SMTP_RCPT
+                value: "nicole@craftypenguins.net"
+              - name: SMTP_SENDER
+                value: "mail-sender@example.com"
+          restartPolicy: Never
